@@ -39,7 +39,7 @@ Given more time and experience using OOP, i may have been able to make it work c
 */
 var ang = atan2(mouseY - eye1.y, mouseX - eye1.x);
 
-fill(255);
+fill(255);      //These elements actually create and draw the eyes, based on the variables for the location. This line fills the eye black (can be changed to another colour code)
 ellipse(eye1.x, eye1.y, eye1.rad);
 fill(0);
 ellipse(eye1.x + (eye1.rad / 4) * cos(ang), eye1.y + (eye1.rad / 4) * sin(ang), eye1.rad / 4 );
@@ -88,6 +88,8 @@ function drawHead(){
 }
 
 // This function will draw 2 eyes and randomise the colour on mouseclick
+
+/* This function has been superseeded by the follow eyes function. I will leave it here to show workings.
 function drawEyes(){ 
 push();
     ellipseMode(RADIUS); //this draws the outside of left eye
@@ -105,9 +107,9 @@ push();
     ellipse(width/1.7, height/2.5, 20, 20);            
 pop();    
 }
+*/
 
-
-function drawNose(){
+function drawNose(){    //this is the function to draw a simple nose
     push();
     fill(255, 255, 0);   
     arc(width/2, height/1.9, 20, 50, PI, 0); //simple arc drawing of a nose
@@ -125,45 +127,10 @@ pop(); //this function removes style settings that are set in this function
 
 }
 
-function drawEar(){
+function drawEar(){ //This function draws a single ear. The idea was to have the face slightly in profile, ala Homer Simpson.
 push();
     fill(255, 255, 0);
     arc(width/4, height/2, 40, 60, 0, PI + HALF_PI, PI + HALF_PI, OPEN);
 pop();
 }
-
-/* this is my working code for attempting to make the follow eyes function work. 
-I have kept this in to return to at a later date. It currently has been commented out.
-
-function followEyes(){
-
-    document.write("test");
-    /* eye1 = {
-        x: width / 2 - 16,
-        y: height / 2,
-        rad: 32
-    };
-    
-    
-    eye2 = {
-        x: width / 2 + 16,
-        y: height / 2,
-        rad: 32
-    } 
-
-    var ang = atan2(mouseY - eye1.y, mouseX - eye1.x);
-
-    fill(255);
-    ellipse(eye1.x, aeye1.y, eye1.rad);
-    fill(0);
-    ellipse(eye1.x + (eye1.rad / 4) * cos(ang), eye1.y + (eye1.rad / 4) * sin(ang), eye1.rad / 4 );
-    
-    ang = atan2(mouseY - eye2.y, mouseX - eye2.x);
-    
-    fill(255);
-    ellipse(eye2.x, eye2.y, eye2.rad);
-    fill(0);
-    ellipse(eye2.x + (eye2.rad / 4) * cos(ang), eye2.y + (eye2.rad / 4) * sin(ang), eye2.rad / 4 );
-}
-*/
 
